@@ -1,4 +1,4 @@
-# Module 03: Day 2 - Array, Functions and Debugging
+# Module 03: #3 - Array, Functions and Debugging
 Expanding from the the primitive datatypes, computers also work with lists of data; one of the most basic is the *array*.  An array offers a way to process a list of items, apply rules repeatedly and collect a series of results.  We look at 1 and 2 dimensional arrays, and briefly touch on Lists (an alternative, related construct).
 
 As we are now conversant with the basic data types and flow, we introduce some tools that give us a way to figure out what is happening when a program runs and which we can use to find where a program does the __bad__ thing (that is to say, *does not do what we want it to do*).  
@@ -15,8 +15,6 @@ As we are now conversant with the basic data types and flow, we introduce some t
 |:-------- |-----:|
 |[Methods & Fields, Using Functions (Bana.05)](https://www.youtube.com/watch?v=1HTsLK_m2ao)|14:06|
 |[Arrays (Bana.09)](https://www.youtube.com/watch?v=eNPX2pTiaHI)|18:08|
-<!--- |[Functions with Classes (Bana.08)](https://www.youtube.com/watch?v=rGlJiUO-dZA)| 16:48| 
-|[Arrays & For Loop](https://www.youtube.com/watch?v=_pUz-GJcdRU)| 21:00| -->
 |[Array Lists (related to Object, Bana.11)](https://www.youtube.com/watch?v=IEqvmsqjpT0)| 11:07|
 |[Lists (with Arrays and data typed, NewBoston.04)](https://www.youtube.com/watch?v=jU5ACV5MucM)|7:16|
 |[Using IntelliJ's Debugger (JavaForTesters YT and text)](http://blog.javafortesters.com/2016/07/how-to-debug-java-with-intellij.html)|08:47|
@@ -24,6 +22,7 @@ As we are now conversant with the basic data types and flow, we introduce some t
 
 ### Optional
 If unclear only.
+
 | Material | Time |
 |:-------- |-----:|
 |[Arrays & For Loop (LearningLad.29)](https://www.youtube.com/watch?v=UZOxpbtlVWg)|4:54|
