@@ -1,20 +1,16 @@
-# Module 03: Day 2 - Array, Functions and Debugging
-Expanding from the the primitive datatypes, computers also work with lists of data; one of the most basic is the *array*.  An array offers a way to process a list of items, apply rules repeatedly and collect a series of results.
+# Module 03: #3 - Array, Functions and Debugging
+Expanding from the the primitive datatypes, computers also work with lists of data; one of the most basic is the *array*.  An array offers a way to process a list of items, apply rules repeatedly and collect a series of results.  We look at 1 and 2 dimensional arrays, and briefly touch on Lists (an alternative, related construct).
 
-As students are now conversant with the basic data types and flow, we introduce some tools so that we can watch what is happening when a program runs and find where a program does the __bad__ thing (that is to say, *goes awry*).  
+As we are now conversant with the basic data types and flow, we introduce some tools that give us a way to figure out what is happening when a program runs and which we can use to find where a program does the __bad__ thing (that is to say, *does not do what we want it to do*).  
 
-Lastly we show how you can extend a program to use external code (or objects &amp; methods) developed by others (i.e. libraries).
-
-## Objectives
 - Functions (methods) and fields
-- Main
 - Arrays
-- Intro to debugging code
+- Array List
+- List
+- Intro to a debugger
 
 
 ## Materials & Resources
-- One of the examples makes use of a library that is available over the internet (from a source called Maven).  Called `commons-lang` you will need it for use in the Array exercise.
-
 | Material | Time |
 |:-------- |-----:|
 |[What is an Array?](https://www.youtube.com/watch?v=NptnmWvkbTw) *It has some objects and stuff we haven't covered yet, but just focus on the idea here, not the specifics. Either this or HINDENGLISH ;)*|7:08|
@@ -26,10 +22,54 @@ Lastly we show how you can extend a program to use external code (or objects &am
 
 
 ### Optional
-No optional for today :)
+If unclear only.
+
+| Material | Time |
+|:-------- |-----:|
+|[Arrays & For Loop (LearningLad.29)](https://www.youtube.com/watch?v=UZOxpbtlVWg)|4:54|
+|[2 dimensional arrays (LearningLad.30)](https://www.youtube.com/watch?v=udHgmxK9oAI)|10:55|
+|[2 dimensional arrays, more (LearningLad.31)](https://www.youtube.com/watch?v=w40VcpGWHBM)|11:00|
+|[How to debug using IntelliJ](https://www.jetbrains.com/help/idea/2016.2/tutorial-debugging-your-first-java-application.html)||
 
 ## Material Review
+- Declaring
+  - constants
+  - initial values of arrays `{}`
+  - `new` keyword
+- Functions
+  - void or return a value
+  - can be used to compartmentalise code (make more readable)
+  - have own variables
+  - take parameters
+- Arrays
+  - can be measured (have `length`)
+  - can be iterated through
+  - type definition (e.g. `Array<String>`)
+  - toString
+  - copyOf
+  - sort
+  - binarySearch
+  - foreach statement (e.g. `for(int row: numberArray) {System.out.print(row);}`)
+- ArrayLists
+  - means to *add* and *remove*
+  - addAll
+  - contains
+  - containsAll *comparing one Array with another*
+  - clear
+  - isEmpty
+- Iterator
+  - supports ArrayList
+  - hasNext
+  - associated with an ArrayList
+- List
+  - List&lt;String&gt;
+  - add
+  - foreach()
+  - size (not length)
 
+We also saw:
+- Object - brief notation
+- System.out.printf and "s% " as the format by which to print
 
 ## Workshop
 
@@ -96,29 +136,28 @@ No optional for today :)
 - [Workshop22.java](workshop/Workshop22.java)
 - [Workshop23.java](workshop/Workshop23.java)
 
-### Main()
-- Fixed invocation
-- There can only be 1 per program
-  - Identify which is the *entry* point
-- How to read the parameter(s) passed
-
 ### Debugging - Introduction
-- Setting a break point-  How to walk through the program
+Review some of your previous programs to play around with the debugger.
+- Setting a break point and walk through the program
 - Inspecting a variable
+- Change a variable value
+- Try with an example that has a function (subroutine)
+- Run to the next breakpoint
+- Run to a point in the code
+Look at what happens with Loops, coming back to the same statement.
 
-### External Libraries/Maven (Optional)
-As there are many examples where external libraries are used, we will briefly now show how to add such in.  We will cover libraries in more depth later in the course.
-
-### Challenges
+### Challenge Using Codewars
 - https://www.codewars.com/kata/descending-order/train/java
+
+### More worked examples for Loops
+The following site has a series of challenges relating to loops.
 - http://www.homeandlearn.co.uk/java/java_for_loops.html
 
 
 ## Individual Workshop Review
 Please follow the styleguide: [Our Java styleguide](../../styleguide/java.md)
-
 - Is the directory structure and the name of the files correct?
-- Are the includes palced on the top of the files?
+- Are the includes placed on the top of the files?
 - Is the indentation good in each file?
 - Is there unnecessary code?
 - Can you find unnecessary code in comments?
