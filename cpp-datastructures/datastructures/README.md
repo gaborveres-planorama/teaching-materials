@@ -53,7 +53,14 @@ double stack_pop(Stack& stack);
  - It should return the value that was pushed the last time
  - It should decrement the `size` by 1
  - It should reallocate the array inside by the decremented `size`, and copy it's values
+ 
+##### Is empty
+```cpp
+bool is_empty(Stack& stack);
+```
 
+ - It should return true if the stack is empty and false otherwise
+ 
 ### Optimized Stack
 Implement a stack data-structure that stores doubles in C++, and several functions that operate on stacks
 Each stack should have `size` property that stores how many elements are in the stack.
@@ -123,6 +130,12 @@ void vector_insert(Vector& v, unsigned int index, double value);
  - It should increment the `size` by one
  - It should reallocate the array
 
+##### Find
+```cpp
+unsigned int vector_find(Vector& v, double value);
+```
+ - It should return the index of the given value
+
 ##### Remove
 ```cpp
 void vector_remove(Vector& v, unsigned int index);
@@ -152,6 +165,7 @@ Node* list_construct_one(double value);
 ```
  - It should set the next element to `nullptr`
  - It should set it's value
+
 ##### Length
 ```cpp
 unsigned int list_length(Node& head);
@@ -184,7 +198,7 @@ void list_insert(Node& head, unsigned int index, double value);
 
 ##### Find
 ```cpp
-unsigned int list_find(Node& head, value);
+unsigned int list_find(Node& head, double value);
 ```
  - It should return the index of the given value
 
