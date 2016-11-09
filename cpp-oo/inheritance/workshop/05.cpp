@@ -1,26 +1,10 @@
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-
-
-class House {
-  private:
-    string address;
-    unsigned int area;
-    unsigned int price;
-  public:
-    unsigned int get_price() {
-      return this->price;
-    }
-};
-
-int main() {
-  // The market price of the houses is 400 EUR / square meters
-  // Create a constructor for the House class that takes it's address and area.
-  House house = House("Andrassy 66", 349);
-  cout << house.get_price();
-
-  return 0;
-}
+// Take the lists from the previous exercise. 
+// Create the class ShapeList.
+// Choose whether to implement it as a linked or array list.
+// And implement ShapeArrayList or ShapeLinkedList accordingly.
+//
+// Create Shapes, Trianlges and Squares and put them into this list.
+// Write a cycle, that goes over each Shape in the list and writes their name and area
+// into a new line each!
+//
+// 

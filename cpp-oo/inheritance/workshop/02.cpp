@@ -3,19 +3,39 @@
 
 using namespace std;
 
-class Student {
-  public:
-    string name;
-    unsigned int age;
-    Student(string name, unsigned int age) {
-      this->age = age;
-      this->name = name;
-    }
+
+class Shape {
+
+	public:
+		string* getName();
+	
 };
 
-int main() {
-  // Create a new instace of the Student class and set it's name to "John" and
-  // it's age to 21 with it's constructor
+string* Shape::getName() {
+	return new string("Generic Shape");
+}
 
-  return 0;
+
+// First, move the previous code to new hpp and cpp files for each class. 
+// Include them into this file. 
+// Make sure they include each other when needed. 
+// Make sure the code below still works.
+
+
+int main() {
+	Shape* shape = new Shape();
+	Triangle* triangle = new Triangle();
+	Square* square = new Square();
+	Shape* a;
+	cout << "I am a...  " << *shape->getName() << endl;
+	cout << "I am a...  " << *triangle->getName() << endl;
+	cout << "I am a...  " << *square->getName() << endl;
+	
+	a = square;
+	cout << "I am a...  " << *a->getName() << endl;
+
+	a = triangle;
+	cout << "I am a...  " << *a->getName() << endl;
+	reurn 0;
+
 }
