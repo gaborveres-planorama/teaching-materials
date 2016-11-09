@@ -154,3 +154,9 @@ Please follow the styleguide: [Our Java styleguide](../../styleguide/java.md)
     - functions: lowerCamelCase(paramsLowerCase)
 - Are all of the brackets in the perfect place?
 - Whitespaces, where they should be, where shouldn't?
+
+# Links
+- [Parent - Java Basic Module](../README.md)
+- [Prior - Expression &amp; Control Flow](../2-expressions-control-flow/README.md)
+- [Next - Arraylists &amp; Foreach] (../4-arraylists-foreach/README.md)
+

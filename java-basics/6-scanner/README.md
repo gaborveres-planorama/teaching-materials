@@ -1,64 +1,105 @@
-# Serialization, Regular Expressions
-[Description of serialization and regex]
+# Usage of the Scanner class
 
 ## Objectives
- - How to Serialize/Deserialize objects
+- Just a little practice on the Scanner class
 
 ## Materials & Resources
 
 ### Training
 | Material | Time |
-|:-------- |-----:|
-|[Serialization Part 1](https://www.youtube.com/watch?v=6MisF1sxBTo)|9:24|
-|[Serialization Part 2](https://www.youtube.com/watch?v=FCRwbIXTFyk)|9:48|
-|[Serialization Part 3](https://www.youtube.com/watch?v=q_g7VYoA4sg)|7:50|
-|[Add Maven library to a IDEA project](https://www.jetbrains.com/help/idea/2016.2/downloading-libraries-from-maven-repositories.html)|0:50|
-|[Gson API docs](https://google.github.io/gson/apidocs/com/google/gson/Gson.html)|1:00|
+|:---------|-----:|
+| [Scanner tutorial](https://www.youtube.com/watch?v=aNm8DK_1ApU) | 14:43 |
+| [Random number tutorial](https://www.youtube.com/watch?v=AhwIYAXPASw) | 5:14 |
 
-### Optional
-*How to use Regular Expressions in Java*
-
-| Material | Time |
-|:-------- |-----:|
-|[Regex](https://www.youtube.com/watch?v=s_PfopWcMwI)|19:27|
 
 ## Material Review
-- Serialization
-  - Serializable interface
-  - ObjectOutputStream
-    - writeObject()
-  - FileOutputStream
-  - ObjectInputStream
-    - readObject()
-  - ObjectOutputStream
-- Gson (serialize to JSON)
-  - JSON
-  - toJson()
-  - fromJson()
 
-### Optional
-- Regular Expressions
-  - Pattern
-    - compile()
-  - Matcher
-    - find()
-    - group()
-  - String.replaceAll(String regex, String replacement)
-  - String.replaceFirst(String regex, String replacement)
 
 ## Workshop
-### Serialization
+### Scanner
 
-#### Exercise
-- [Workshop01.java](workshop/Workshop01.java)
-- [Workshop02.java](workshop/Workshop02.java)
-- [Workshop03.java](workshop/Workshop03.java)
-- [Workshop04.java](workshop/Workshop04.java)
+#### Exercise 01
+Create a program, that asks the user's name and then greet it!
 
-### Regular Expression
+#### Exercise 02 - Guess my number
+The program randomly choses a number and then gives hints and/or goads the user for not determining it
 
-#### Exercise
-- [Workshop13.java](workshop/Workshop13.java)
+##### Sample Operation
+```
+Enter a top number in the range, or 0?
+```
+> 64
+
+```
+Okay, I've got a number.  You should be able to figure that out in 6 goes, let's begin.  
+Guess?
+```
+> 32
+
+```
+Nope, you're low. You've got 5 guesses left.  Guess?
+```
+> 48
+
+```
+Nope, you're high. You've got 4 guesses left.  Guess?
+```
+> 40
+
+```
+Nope, you're high. You've got 3 guesses left.  Guess?
+```
+> 35
+
+```
+Nope, you're low. You've got 2 guesses left.  Guess?
+```
+> 37
+
+```
+Nope, you're high and you've just repeated yourself, what a waste. Last chance.  Guess?
+```
+> 37
+
+```
+What are you thick?  You just guessed 37.  Guess?
+```
+> 37
+
+```
+Ugh, you tried that before! Guess?
+```
+> 38
+
+```
+Ever considered being a fortune teller?  Guess not.  Guess?
+```
+> 36
+
+```
+Yippee, I was running out of insults.
+
+Try again?  Enter a top number in the range, or 0?
+```
+> 1
+
+```
+Okay, I've got a number.  You should be able to figure that out in 1 go, let's begin.  
+
+Guess?
+```
+> 1
+
+```
+Well done, you managed to guess it in 1 go.
+
+Try again?  Enter a top number in the range, or 0?
+```
+> 0
+
+```
+It was fun playing.  Bye!
+```
 
 ## Individual Workshop Review
 Neatness counts in coding.
