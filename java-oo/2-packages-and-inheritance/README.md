@@ -35,6 +35,7 @@
 - [04) rectangle](workshop/Workshop04.md) - inheritance
 - [05) square](workshop/Workshop05.md) - inheritance, overwrite method
 - [06) point &amp; line](workshop/Workshop06.md) - inheritance, additional methods
+- [  ) Animal - Dog vs Bird](workshop/WorkshopAnimal.md) - inheritance, casting
 - [07) cylinder](workshop/Workshop07.md) - super
 - [08) package it up](workshop/Workshop08.md) - take what was built and put it into a package
 
