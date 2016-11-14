@@ -1,58 +1,96 @@
-Revisit the `Circle` class.  This object consists of 2 fields:
-+ radius:double = 1.0
-+ color:String = "red"
+Add to the `Animal` class the following attributes:
++ lifeExpectancy:int  //years
++ isCarnivore:boolean
 
-It has constructors:-
-+ The *default* constructor (without any parameter) sets the radius to 1, and color red
-+ Circle(radius:double) - sets just the radius
-+ Circle(radius:double, color:String) - as you'd expect
+Update the constructors:-
++ The *default* constructor (without any parameter) which sets lifeExpectancy to 10, and false for isCarnivore
++ An alternative that takes `lifeExpectancy` and `isCarnivore` parameters.
 
-There are getters and setters:-
-- getRadius():double
-- setRadius(radius:double):void
-- getColor():String
-- setColor(color:String):void
+Both constructors tell us "created an animal".
 
-An there are some other Methods:-
-- toString():String - returns "Circle[radius=<value>,color=<value>]"
-- getArea():double
-- getCircumference():double
+There are no need for getters nor setters.
 
-After defining this, execute the following testbed.
+Add some other Methods:-
+- speak() - sout("speaks")
+- toString() - returns "isCarnivore=%b, lifeExpectancy=%d"
+
+
+Next extend `Animal` with the class `Dog`.
+- How do you tell the environment that Dog inherits from Animal?
+- How do you create the item, especially as for dogs the default would be lifeExpectancy 15 and true for isCarnivore
+- dogs override
+  - speak() - sout("barks")
+- have an additional method
+  - beg() - sout("begs")
+- dogs usually have tails (`hasTail`)
+
+Next extend `Animal` with the class `Bird`.
+- Birds only usually live 2 years and are not carnivores (in general)
+- speak() - sout("chirp")
 
 ```java
-public class Workshop03{
-   public static void main(String[] args) {
-      // Test constructors and toString()
-      Circle c1 = new Circle(1.1, "blue");
-      System.out.println(c1);  // toString()
-      Circle c2 = new Circle(2.2);
-      System.out.println(c2);  // toString()
-      Circle c3 = new Circle();
-      System.out.println(c3);  // toString()
+public class Workshop03 {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Bird bird = new Bird();
+        Dog dog = new Dog();
 
-      // Test Setters and Getters
-      c1.setRadius(2.2);
-      c1.setColor("green");
-      System.out.println(c1);  // toString() to inspect the modified instance
-      System.out.println("The radius is: " + c1.getRadius());
-      System.out.println("The color is: " + c1.getColor());
+        System.out.println("Testing Animal");
+        // how does it speak, sleep, and tell me about its lifeExpectancy and if its a carnivore
 
-      // Test getArea() and getCircumference()
-      System.out.printf("The area is: %.2f%n", c1.getArea());
-      System.out.printf("The circumference is: %.2f%n", c1.getCircumference());
-   }
+        System.out.println("\nTesting Bird");
+        // how does it speak, sleep, what else it can do and tell me about its lifeExpectancy and if its a carnivore
+
+        System.out.println("\nTesting Dog");
+        // how does it speak, sleep, what else it can do and tell me about its lifeExpectancy and if its a carnivore, and what about the tail?
+
+
+        System.out.println("\nTesting Dog2");
+        Animal dog2 = new Dog();
+        // how does it speak, sleep, what else it can do and tell me about its lifeExpectancy and if its a carnivore, and what about the tail?
+
+        System.out.println("\nTesting Dog 'd'");
+        // how does it speak, sleep, what else it can do and tell me about its lifeExpectancy and if its a carnivore, and what about the tail?
+
+    }
 }
+
 ```
 
-The results should be:-
+The output expected is:-
+
 ```
-Circle[radius=1.1, color=blue]
-Circle[radius=2.2, color=red]
-Circle[radius=8.8, color=red]
-Circle[radius=2.2, color=green]
-Radius is: 2.2
-Color is: green
-Area is: 15.21
-Circumference is: 13.82
+created an animal.
+new bird
+new dog
+Testing Animal
+animal speaks
+animal sleeps
+isCarnivore=false, lifeExpectancy=10
+
+Testing Bird
+bird chirps
+animal sleeps
+bird flies
+And a bird:isCarnivore=false, lifeExpectancy=2
+
+Testing Dog
+dog barks
+animal sleeps
+dog begs
+And a dog:isCarnivore=true, lifeExpectancy=15, and hasTail=true
+
+Testing Dog2
+new dog
+dog barks
+animal sleeps
+Casting dog2 into Y to see if it begs...
+dog begs
+And a dog2 cast as (Dog) Y:isCarnivore=true, lifeExpectancy=22, and hasTail=false
+
+Testing Dog 'd'
+new dog
+dog barks
+animal sleeps
+isCarnivore=true, lifeExpectancy=15
 ```
