@@ -1,8 +1,32 @@
-Create a `Circle` class:
+Create a `Car` and a separate `App` class.
 
-+ Constructor
-  - Given a parameter, sets the radius
-  - No parameter passed, radius of 1
-+ Methods
-  - `getPerimeter` - turns the circumference.
-  - `getArea` - returns it's area.
+The mentors' have already laid out a starter for you.
+
+When a new car is created, the size of the Engine should be 1600 cc and the color should be red.
+
+```java
+// Car.java
+public class Car {
+    //Add somethings here to create a car and some fields
+}
+
+// App.java
+public class App {
+    public static void main(String[] args){
+        Car myCar = new Car();
+        System.out.printf("Just got a new Car, it's %s and has a %d cc Engine!\n",
+        "puke" , 1 // replace this stuff with the way we get those attributes about myCar
+    );
+    }
+}
+```
+
+The output should be:
+
+`Just got a new Car, it's red and has a 1600 cc Engine!`
+
+And not
+
+`Just got a new Car, its puke and has a 1 cc Engine!`
+
+And the settings for the color and sizeEngine must not be in the declaration (e.g. no `int sizeEngine = 1600;`)
