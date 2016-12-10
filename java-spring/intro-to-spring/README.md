@@ -29,12 +29,11 @@ However, we are focusing on applying Spring through annotation as this technique
 
 | Material | Time |
 |:---------|-----:|
-|[Inversion of Control/Dependency Injection (JavaBrains.01)](https://www.youtube.com/watch?v=GB8k2-Egfv0&t=714s) - explains how the  need for the Bean Factory arose.|14:51|
+|[Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)| reading |
+|[Inversion of Control/Dependency Injection (JavaBrains.01)](https://www.youtube.com/watch?v=GB8k2-Egfv0) - explains how the  need for the Bean Factory arose.|14:51|
 |[Understanding Beans &amp; Factory Design Pattern (JavaBrains.03)](https://www.youtube.com/watch?v=xlWwMSu5I70)|6:52|
-|[Creating beans - annotation (InterviewDot)](https://www.youtube.com/watch?v=P0m1dW0LJeE) - getting started with annotation using `@bean()`.|1:58|
-|[@Component annotation (Telusko)](https://www.youtube.com/watch?v=4fZJfqpnyWg) - this is fairly clear and quick |6:35|
-|[Autowire - annotation (JavaBrains.19)](https://www.youtube.com/watch?v=IVIhVJJGo68)|14:19|
-|[Spring support enable in IntelliJ](https://www.jetbrains.com/help/idea/2016.2/enabling-spring-support.html#plugin)||
+|[Serving Web Content with Spring MVC](http://spring.io/guides/gs/serving-web-content/)| reading |
+|[Understanding View Templates](http://spring.io/understanding/view-templates)| reading |
 
 Once through the above, consider rewatching the first video (JavaBrains.01) to reinforce your understanding.
 
@@ -44,32 +43,121 @@ Once through the above, consider rewatching the first video (JavaBrains.01) to r
 |:---------|-----:|
 |[Creating beans - XML (JavaBrains.04)](https://www.youtube.com/watch?v=7c6ZTF6cF88&s=10) - starts off doing this the way we know and then repeats using the Bean Factory pattern.|11:21|
 |[Clear, concise tutorials related to Spring](https://www.tutorialspoint.com/spring/spring_ioc_containers.htm) - great resource for quick checking||
+
 |[Spring's detailed discussion on Beans](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html) - _Reference Only_ this is the defacto, *go to* site for Spring.|170 pages|
 
 
+
 ## Review
+- What is REST
 - Dependency Injection/Inversion of Control
 - Bean
 - Component
 - Autowired
-- `@bean(name=<>)`
-- `@configuration`
-- `@required`
-- `@autowired`
-- `@component`
-- libraries
-  - `org.springframework.context.annotation*` - to reach use annotation directives to instead read a Java class and pick up on `@configuration`, `@bean`, `@PostConstruct` &amp; `@PreDestroy` and to have a Java class with embedded annotation 
-  - `org.springframework.beans.factory.*`
+  - `@bean(name=<>)`
+  - `@autowired`
+  - `@component`
+- REST controller
+- Web Content with Spring MVC
+- View Templates
+
 
 
 ## Workshops
 In today's workshops you'll be creating a few simple beans.  The beans are critical for later stuff we'll do.  So right now it's just getting a basic feel for how to write.
 
-- [Do the Traditional, "Hello World"](./workshop/Workshop01.md) - Create a simple, single bean and ensure that Spring is working on your machine
-- multiple beans
-- autowire example
-- Start Calorie Counter Project
+### Create our first Spring Boot Application
+- [Open Start Spring IO site](http://start.spring.io/)
+- Use following settings: 
+  - Generate a Gradle with Spring Boot 1.4.2.
+  - Group: com.greenfoxacademy
+  - Artifact: springstart
+  - Name: springstart
+  - Package Name: com.greenfoxacademy.springstart
+  - Packaging: jar
+  - Java Version: 1.7
+  - Language: java
+  - Selected Dependencies: Lombok, Web, Thymeleaf, DevTools
+- Generate Project
+- Extract the downloaded zip
 
+- IntelliJ: Import project
+- Use Gradle external model
+- Use Auto import, Create directories for empty..., uncheck: Create separate modules per source set >> Finish
+- Open build.grdle and remove line: "apply plugin: 'eclipse'"
+- Open terminal from bottom of the IDE and start Spring boot app container with: "gradlew bootRun" command
+- Open [localhost:8080](http://localhost:8080) in your webbrowse
+- If you get "Whitelabel Error Page" it means your application is running.
+
+### Hello World REST App
+- Add "controllers" package to your Spring project.
+- Create "Greeting" class with "long id" and "String content" fields. Getter and AllArgsConstructor. (Use Lombok)
+- Add "HelloRESTController" class to controllers package and add @RestController annotation to this class.
+- Add greeting method and use @RequestMapping annotation.
+- Create and pass a Greeting object when it is called.
+- Recompile app
+- Open [http://localhost:8080/greeting](http://localhost:8080/greeting) in your webbrowser
+- Your output should look like: {"id":1,"content":"Hello, World!"}
+
+### Hello User REST App
+- Please improve your previous app to greet you and get the name from url query parameter.
+- You should use @RequestParam annotation 
+- Recompile app
+- Open [http://localhost:8080/greeting?name=Your%20name](http://localhost:8080/greeting?name=Your%20name) in your webbrowser
+- Your output should look like: {"id":1,"content":"Hello, Your name!"}
+
+### REST Greet counter app
+- Lets improve your previous app to able to count the greet number. (count api calls)
+- You should use AtomicLong class.
+- Recompile app
+- Open [http://localhost:8080/greeting?name=Your%20name](http://localhost:8080/greeting?name=Your%20name) in your webbrowser
+- Your output should looks like: {"id":1,"content":"Hello, Your name!"}
+- Then at next call your output should look like: {"id":2,"content":"Hello, Your name!"} and so on...
+
+### Hello World Web App
+- Lets create another controller "HelloWebController" to controllers package.
+- Add greeting method like:
+```java
+@RequestMapping("/web/greeting")
+    public String greeting(Model model) {
+        model.addAttribute("name", " World");
+        return "greeting";
+    }
+```
+- Add following HTML template file to "resources/templates/greeting.html"
+```html
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'"/>
+</body>
+</html>
+```
+- Recompile app
+- Open [http://localhost:8080/web/greeting](http://localhost:8080/web/greeting) in your webbrowser
+- Your output should look like: Hello, World! (It is a web page.)
+
+### Web Greet counter app
+- Lets do a web app which can count the website load and greet the user as the previous counter task.
+- Open [http://localhost:8080/web/greeting?name=Your%20name](http://localhost:8080/web/greeting?name=Your%20name) in your webbrowser
+- Your output should look like: Hello, Your name! This site was loaded 3 times since last server start.
+
+### Say Hello to all the world (Web App)
+You are very happy and would say hello in different languages
+
+According to previous tasks you should create a webb app which say hello in different languages and this hellos have different font sizes and colors.
+
+- Use the following greetings:
+```java
+String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",
+                "Guten Tag", "Gia'sou", "Aloha", "Shalom", "Namaste", "Namaste", "Jó napot", "Halló", "Helló", "Góðan daginn", "Halo", "Aksunai", "Qanuipit", "Dia dhuit",
+                "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
+                "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
+```
 
 #Links
 - [Parent - Java Spring](../README.md)
