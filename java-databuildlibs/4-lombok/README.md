@@ -1,5 +1,5 @@
-# Data & Build & Libs
-*Subtitle*
+# Annotation++: Project Lombok, (Jackson)
+*Another useful annotation based java libraries.*
 
 ## Materials & Resources
 
